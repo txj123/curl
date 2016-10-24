@@ -134,7 +134,7 @@ class CurlResponse
      * @param string $callback
      * @return string
      */
-    function to_jsonp($callback='callback_func'){
+    function get_to_jsonp($callback='callback_func'){
         return $callback . '(' . $this->_response . ')';
     }
 
