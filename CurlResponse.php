@@ -50,10 +50,9 @@ class CurlResponse
 
     /**
      * CurlResponse constructor.
-     * @param $curl_init
-     * @param string $response
+     * @param $curl
      */
-    function __construct(Curl $curl)
+    function __construct($curl)
     {
         $this->curl = $curl;
 
@@ -106,6 +105,37 @@ class CurlResponse
     function get_response()
     {
         return $this->_response;
+    }
+
+    /**
+     * 返回body信息
+     * 将json类型的数据，转为数组
+     *
+     * @return mixed
+     */
+    function get_to_array(){
+        return json_decode($this->_response);
+    }
+
+    /**
+     * 返回body信息
+     * 将数组转为json数组
+     *
+     * @return string
+     */
+    function get_to_json(){
+        return json_encode($this->_response);
+    }
+
+    /**
+     * 返回body信息
+     * 转为jsonp格式返回
+     *
+     * @param string $callback
+     * @return string
+     */
+    function to_jsonp($callback='callback_func'){
+        return $callback . '(' . $this->_response . ')';
     }
 
     /**
