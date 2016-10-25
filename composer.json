@@ -1,6 +1,7 @@
 {
     "name": "zilf/curl",
     "type": "library",
+    "keywords": ["curl"],
     "description": "Zilf Curl Component",
     "license": "MIT",
     "authors": [
