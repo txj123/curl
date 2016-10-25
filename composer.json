@@ -16,10 +16,5 @@
     "autoload": {
 	"psr-4": {"Zilf\\": ""}
     },
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.0.x-dev"
-        }
-    }
+    "minimum-stability": "dev"
 }
